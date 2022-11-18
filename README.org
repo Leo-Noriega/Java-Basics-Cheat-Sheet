@@ -1,0 +1,90 @@
+#+title: Java Basics "Cheat Sheet"
+#+DESCRIPTION: An org document of the basics of java in a "Quick Cheat Sheet".
+#+author: Leonardo Noriega
+#+date: <2022-11-17 Thu>
+
+* TODO Put this description in github: A simple Cheat Sheet of an org mode I have been writting on Emacs beacuse I'm getting back to Java.
+
+* TABLE OF CONTENTS :toc:
+- [[#put-this-description-in-github-a-simple-cheat-sheet-of-an-org-mode-i-have-been-writting-on-emacs-beacuse-im-getting-back-to-java][Put this description in github: A simple Cheat Sheet of an org mode I have been writting on Emacs beacuse I'm getting back to Java.]]
+- [[#commenting-on-java][Commenting on Java]]
+  - [[#there-are-2-types-of-comments][There are 2 types of comments:]]
+- [[#main-method][Main method]]
+- [[#variables][Variables]]
+  - [[#types-of-variables][Types of Variables]]
+  - [[#defining-variables-and-storing-values-in-variables][Defining variables and storing values in variables]]
+- [[#operators][Operators]]
+  - [[#all-arithmetic-operators-in-java][All arithmetic operators in java]]
+
+* Commenting on Java
+As developers we are always told to commment our code beacuse it's a good practice for the reliability and organization of our code, commenting the code has helped me in *many* situations and nowadays I understand why it is a "good practice" to always do it so that's why it's the first thing I'm showing in this "cheat-sheet".
+** There are 2 types of comments:
+*** This is a *single-line* comment just start with "//"
+#+begin_src java
+public class Main{
+    public static void main(String[] args){
+        //System.out.println("This line is commented");
+        System.out.println("This line is not commented");
+    }
+}
+#+end_src
+*** This is a *multi-line* comment start with a " /* " and end with " */ "
+#+begin_src java
+public class Main{
+    public static void main(String[] args){
+        /*This whole block is commented
+          Code is not gonna read any this
+          System.out.println("This line is commented");
+          */
+        System.out.println("This line is not commented");
+    }
+}
+#+end_src
+* Main method
+If you are using and IDE for java you probbably are getting this "Main method" automatically, but what if you wanted to start practicing all the basics right now on your plain text editor?
+Java it's kinda "picky" for starting a project, you will need mandatory a class name and that class need to match the filename, so lets suposse we create a file with the following name: "JavaBasics.java" in order to compile your code you will need to always add the ".java" at the end.
+So now that your file has been created with the name "JavaBasics.java" let's see how your main method should be written to work correctly.
+#+begin_src java
+public class JavaBasics {
+    //The only thing that you will change in your code it's your filename instead of "JavaBasics"
+    public static void main(String[] args){
+    }
+}
+#+end_src
+* Variables
+** Types of Variables
+- String: This variable stores text and it *needs to be surrounded by double quotes* "Like this".
+- int: This variable stores integres so postive or negative numbers with *NO* decimalsi such as 10, 233 or -1, -167.
+- float: This variable stores "floating" numbers so this variable *DOES* accept decimals such as 7.25 or -7.25.
+- char: This variable stores single characters such as "a", "b" or "A", "B" and again the character *needs to be surrounded by double quotes*.
+- boolean: Pretty explanatory, right? Stores boolean values either *true* or *false*.
+** Defining variables and storing values in variables
+#+begin_src java
+public class Main {
+    public static void main(String[] args){
+        String String1 = "Leonardo";
+        int integrer1 = 12;
+        float float1 = 7.25f;
+        char character1 = 'a';
+        Boolean boolean1 = true;
+        //"Printing" all the stored values by calling the variables. Don't worry you will learn what this "printing" is.
+        System.out.println(String1 + " " + integrer1 + " " + float1 + " " + character1 + " " + boolean1);
+    }
+}
+#+end_src
+
+*** OUTPUT:
+#+RESULTS:
+: Leonardo 12 7.25 a true
+
+* Operators
+** All arithmetic operators in java
+| Operator | Name           | Description                      | Example | Output |
+|----------+----------------+----------------------------------+---------+--------|
+| "+"      | Addition       | Adds a values a value to another | 3 + 5   |      8 |
+| "-"      | Subtraction    | Subtracts one value from another | 3 - 5   |     -2 |
+| "*"      | Multiplication | Multiples values                 | 3 * 5   |     15 |
+| "/"      | Division       | Divides one value by another     | 3 / 5   |    0.6 |
+| "%"      | Modulus        | Returns the division remainder   | 3 % 5   |      3 |
+| "++"     | Increment      | Increase a stored value by 1     | ++3     |      4 |
+| "--"     | Decrement      | Decrease a stored value by 1     | --3     |      2 |
